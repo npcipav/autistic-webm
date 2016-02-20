@@ -2,7 +2,13 @@
 <head>
   <title>Autism is here</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" media="all" href="styles.css">
+  <style>
+    video {
+      position: absolute; right: 0; bottom: 0;
+      min-width: 100%; min-height: 100%;
+      width: auto; height: auto; z-index: -100;
+    }
+  </style>
 </head>
 <body>
   <video id="video" autoplay preload="auto" />
@@ -11,13 +17,13 @@
     var videoPlayer = document.getElementById('video');
     
     function playIt() {
-    videoPlayer.play();
+      videoPlayer.play();
 
-    var videos = [
-    "14555689891060",
-    ];
-    videos = videos[Math.floor(Math.random() * videos.length)];
-    videoPlayer.src = "/" + videos + ".webm";
+      var videos = [
+        "14555689891060",
+      ];
+      videos = videos[Math.floor(Math.random() * videos.length)];
+      videoPlayer.src = "/" + videos + ".webm";
     }
 
     videoPlayer.addEventListener('ended', playIt, false);
