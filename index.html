@@ -11,19 +11,23 @@
   </style>
 </head>
 <body>
-  <video id="video" autoplay preload="auto" />
+  <video id="video" src="14555689891060" autoplay preload="auto" />
 
   <script>
     var videoPlayer = document.getElementById('video');
     
+    function getListOfWebm() {
+      return [
+        "14555689891060",
+      ];
+    }
+    
     function playIt() {
       videoPlayer.play();
 
-      var videos = [
-        "14555689891060",
-      ];
+      var videos = getListOfWebm();
       videos = videos[Math.floor(Math.random() * videos.length)];
-      videoPlayer.src = "/" + videos + ".webm";
+      videoPlayer.src = "../../tree/master" + videos + ".webm";
     }
 
     videoPlayer.addEventListener('ended', playIt, false);
