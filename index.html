@@ -1,0 +1,27 @@
+<!doctype html>
+<head>
+  <title>Autism is here</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" media="all" href="styles.css">
+</head>
+<body>
+  <video id="video" autoplay preload="auto" />
+
+  <script>
+    var videoPlayer = document.getElementById('video');
+    
+    function playIt() {
+    videoPlayer.play();
+
+    var videos = [
+    "14555689891060",
+    ];
+    videos = videos[Math.floor(Math.random() * videos.length)];
+    videoPlayer.src = "/webm/" + videos + ".webm";
+    }
+
+    videoPlayer.addEventListener('ended', playIt, false);
+
+    playIt();
+  </script>
+</body>
